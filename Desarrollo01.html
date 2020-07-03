@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo01</title>
+    <script>
+        function limpiar()
+        {
+            document.getElementById("nombre").value="";
+            document.getElementById("nota01").value="";
+            document.getElementById("nota02").value="";
+        }
+        function calculo()
+        {
+            var promedio=0;
+            var observacion="";
+            var n1=parseFloat(document.getElementById("nota01").value);
+            var n2=parseFloat(document.getElementById("nota02").value);
+            promedio = n1 *0.2 + n2 *0.8;
+            if(promedio<14)
+            {
+                observacion="B";
+            }else{
+            
+                observacion="A";
+            }
+            document.ejercicio.prom.value=Math.round(promedio);
+            document.ejercicio.observacion.value=observacion;
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Desarrollo01</h1>
+    <p><a href="index.html">Regresar al principal</a></p>
+<form action="" name="ejercicio" >
+    <table border="1" align="center">
+        <tr>
+            <td>nombre :</td>
+            <td><input type="text" name="nombre" id="nombre" required></td>
+        </tr>
+        <tr>
+            <td>nota 01:</td>
+            <td><input type="number" name="nota01" id="nota01" required min="0" max="20"></td>
+        </tr>
+        <tr>
+            <td>nota 02:</td>
+            <td><input type="number" name="nota02" id="nota02" required min="0" max="20"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="btn1" value="limpiar" onclick="limpiar()"></td>
+            <td><input type="button" name="btn2" value="calcular" onclick="calculo()"></td>
+        </tr>
+        <tr>
+            <td>promedio :</td>
+            <td><input type="text" name="prom" id="prom"></td>
+        </tr>
+        <tr>
+            <td>observacion :</td>
+            <td><input type="text" name="observacion" id="observacion"></td>
+        </tr>
+    </table>
+</form>
+    
+</body>
+</html>
